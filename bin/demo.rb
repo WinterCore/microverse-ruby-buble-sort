@@ -3,7 +3,7 @@ require_relative '../src/bubble_sort'
 
 raise ArgumentError, "Usage: #{$PROGRAM_NAME} <comma separated numbers> [asc|desc]" unless ARGV.length.positive?
 
-arr = ARGV[0].split(/,\s?/)
+arr = ARGV[0].split(/,\s?/).map(&:to_f)
 
 if ARGV[1] && (%w[asc desc].include? ARGV[1].downcase)
   if ARGV[1].downcase == 'asc'
